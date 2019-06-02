@@ -63,11 +63,15 @@ class App extends React.Component {
   }
   
   render() {
+    const urlPage = 'http://localhost:3000/';
     let htmlModal;
     if (this.state.isModalOpen) {
       htmlModal = (
         <div className="modal">
           <p className="modal-text">コアラ「{this.state.koalaSaying}」</p>
+          <button onClick={() => {
+            window.open(`https://twitter.com/share?url=${urlPage}&text= ${this.state.koalaSaying} /hello-koala`, "SNS_window", "width=600, height=500, menubar=no, toolbar=no, scrollbars=yes");
+          }}>Twitter</button>
           <button onClick={() => {this.setState({isModalOpen: false});}}>閉じる</button>
         </div>
       );
@@ -86,7 +90,7 @@ class App extends React.Component {
           <button 
             onClick={
               () => {
-                this.handleClick(4)
+                this.handleClick(2)
               }
             }
           >こんにちは</button>
