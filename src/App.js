@@ -11,7 +11,11 @@ class App extends React.Component {
     };
   }
 
+  // リストからランダムに一つアイテムを返す。
   random(list) {
+    if (!list) {
+      return false;
+    }
     const randNum = Math.floor(Math.random()* list.length );
     return(list[randNum]);
   }
@@ -43,15 +47,19 @@ class App extends React.Component {
         ];
         break;
       default:
-        koalaSayingList = [];
+        koalaSayingList = null;
     }
-    //ランダムにする
-    const koalaSaying = this.random(koalaSayingList);
-
-    this.setState({
-      koalaSaying: koalaSaying,
-      isModalOpen: true
-    });
+    
+    if (koalaSayingList) {
+      const koalaSaying = this.random(koalaSayingList);
+      
+      this.setState({
+        koalaSaying: koalaSaying,
+        isModalOpen: true
+      });
+    } else {
+      console.log('handleClick() args is invalid！');
+    }
   }
   
   render() {
@@ -78,7 +86,7 @@ class App extends React.Component {
           <button 
             onClick={
               () => {
-                this.handleClick(2)
+                this.handleClick(4)
               }
             }
           >こんにちは</button>
