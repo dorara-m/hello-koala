@@ -6,13 +6,13 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
+        <h1>Hello Koala!</h1>
+        <footer className="App-footer">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
-            Edit <code>src/App.js</code> and save to reload.
+            this page is built using `React`
           </p>
-        </header>
-        <h1>Hello Koala!</h1>
+        </footer>
         
       </div>
     )
