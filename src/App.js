@@ -1,13 +1,15 @@
 import React from 'react';
 import logo from './logo.svg';
+import koala from './my-koala.jpg';
 import './App.css';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isModalOpen : false,
-      koalaSaying :'ねむい…'
+      helloType : '',
+      koalaSaying :'',
+      isModalOpen : false
     };
   }
 
@@ -22,28 +24,31 @@ class App extends React.Component {
 
   handleClick(helloType) {
     let koalaSayingList;
+    this.setState({
+      helloType: helloType
+    });
     switch (helloType) {
-      case 1:
+      case 'おはよう':
         koalaSayingList = [
-          'おはコアラ',
-          'おはドアラ',
-          'zzz…',
-          'おはにゃん'
+          'おはコアラ(*´ω｀*)',
+          'おはドアラʕ•͡દ•ʔ ',
+          'zzz…(˘ω˘ ≡ ˘ω˘) ',
+          'おはにゃん(^·ｪ·^)'
         ];
         break;
-      case 2:
+      case 'こんにちは':
         koalaSayingList = [
-          'こんにちコアラ',
-          'お腹すいた…',
-          'こんちくわ',
-          'コアラのマーチ'
+          'こんにちコアラ꒰๑•௰•๑꒱',
+          'お腹すいた…|ω`)',
+          'こんちくわ( ·∀·)',
+          'コアラのマーチ┗=͟͟͞͞( ˙∀˙)=͟͟͞͞┛'
         ];
         break;
-      case 3:
+      case 'おやすみ':
         koalaSayingList = [
-          'おやすみコアラ',
-          'くそねみコアラ',
-          'zzz…（もう寝ているようだ'
+          'おやすみコアラ(ﾟДﾟ)ﾉ',
+          'くそねみコアラ(˘ω˘)',
+          '(。-ω-)zzz…（もう寝ている）'
         ];
         break;
       default:
@@ -68,37 +73,44 @@ class App extends React.Component {
     let htmlModal;
     if (this.state.isModalOpen) {
       htmlModal = (
-        <div className="modal">
-          <p className="modal-text">コアラ「{this.state.koalaSaying}」</p>
-          <button onClick={() => {
-            window.open(`https://twitter.com/share?url=${urlPage}&text= ${this.state.koalaSaying} /hello-koala`, "SNS_window", "width=600, height=500, menubar=no, toolbar=no, scrollbars=yes");
-          }}>Twitter</button>
-          <button onClick={() => {this.setState({isModalOpen: false});}}>閉じる</button>
+        <div className="modalWrap">
+          <div className="modal">
+            <div className="modal-flex">
+              <img src={koala} className="modal-img" />
+              <p className="modal-text">「{this.state.koalaSaying}」</p>
+            </div>
+            <button className="modal-share" onClick={() => {
+              window.open(`https://twitter.com/share?url=${urlPage}&text= コアラに「${this.state.helloType}」と挨拶しました！/コアラ「${this.state.koalaSaying}」/hello-koala`, "SNS_window", "width=600, height=500, menubar=no, toolbar=no, scrollbars=yes");
+            }}>結果をツイートする</button>
+            <a className="modal-close" onClick={() => {this.setState({isModalOpen: false});}}>×</a>
+          </div>
         </div>
       );
     }
     return (
       <div className="App">
-        <h1>コアラに挨拶しよう！</h1>
+        <h1>Hello! Koala!</h1>
+        <p>我が家のコアラです。<br />コアラに挨拶しよう！</p>
+        <img src={koala} className="app-koala" />
         <div className="btn-wrap">
           <button 
             onClick={
               () => {
-                this.handleClick(1)
+                this.handleClick('おはよう')
               }
             }
           >おはよう</button>
           <button 
             onClick={
               () => {
-                this.handleClick(2)
+                this.handleClick('こんにちは')
               }
             }
           >こんにちは</button>
           <button 
             onClick={
               () => {
-                this.handleClick(3)
+                this.handleClick('おやすみ')
               }
             }
           >おやすみ</button>
