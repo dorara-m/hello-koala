@@ -51,6 +51,7 @@ class App extends React.Component {
     }
     
     if (koalaSayingList) {
+      koalaSayingList.push("(   'ч' )ﾑｼｬﾑｼｬ（ユーカリを食べる音")
       const koalaSaying = this.random(koalaSayingList);
       
       this.setState({
