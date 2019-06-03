@@ -21,7 +21,9 @@ button:hover {
 }
 
 .app-koala {
+  margin-top: 20px;
   width: 150px;
+  animation: bounce ease infinite .4s alternate;
 }
 
 .btn-wrap {
@@ -66,8 +68,8 @@ button:hover {
 }
 .modal-text {
   background-color: #fdb776;
-  padding: 7px;
-  max-width: 230px;
+  padding: 7px 3px;
+  max-width: 270px;
   margin: 0px auto;
   position: relative;
   box-sizing: border-box;
@@ -118,10 +120,20 @@ button:hover {
   height: 50px;
   pointer-events: none;
 }
+
+
+@keyframes bounce {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-10px);
+  }
+}
 @keyframes fade-in-bottom {
   from {
     display: none;
-    transform: translateY(50px);
+    transform: translateY(80px);
   }
   to {
     display: block;
