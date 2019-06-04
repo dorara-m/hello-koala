@@ -1,6 +1,5 @@
 import React from 'react';
 import logo from './logo.svg';
-import koala from './my-koala.jpg';
 import './App.css';
 
 class App extends React.Component {
@@ -69,14 +68,14 @@ class App extends React.Component {
   }
   
   render() {
-    const urlPage = 'http://localhost:3000/';
+    const urlPage = 'https://hello-koala.netlify.com/';
     let htmlModal;
     if (this.state.isModalOpen) {
       htmlModal = (
         <div className="modalWrap">
           <div className="modal">
             <div className="modal-flex">
-              <img src={koala} className="modal-img" alt=""/>
+              <img src="./my-koala.jpg" className="modal-img" alt=""/>
               <p className="modal-text">「{this.state.koalaSaying}」</p>
             </div>
             <button className="modal-share" onClick={() => {
@@ -91,7 +90,7 @@ class App extends React.Component {
       <div className="App">
         <h1>Hello! Koala!</h1>
         <p>我が家のコアラです。<br />コアラに挨拶しよう！</p>
-        <img src={koala} className="app-koala" alt="" />
+        <img src="./my-koala.jpg" className="app-koala" alt="" />
         <div className="btn-wrap">
           <button 
             onClick={
