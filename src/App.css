@@ -59,6 +59,10 @@ button:hover {
   border-radius: 30px;
   animation: fade-in-bottom .5s;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .modal-flex {
   justify-content: center;
