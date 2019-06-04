@@ -20,6 +20,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 export PATH="$HOME/.yarn/bin:$PATH"
 ```
 
+### ビルド
+- `yarn build`
+
+
 ### ファイル構成
 #### src
 * `app.js` => react component (JSX) = html & js
