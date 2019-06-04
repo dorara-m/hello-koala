@@ -137,11 +137,9 @@ button:hover {
 }
 @keyframes fade-in-bottom {
   from {
-    display: none;
     transform: translateY(80px);
   }
   to {
-    display: block;
     transform: translateY(0);
   }
 }
