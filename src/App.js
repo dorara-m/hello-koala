@@ -76,13 +76,13 @@ class App extends React.Component {
         <div className="modalWrap">
           <div className="modal">
             <div className="modal-flex">
-              <img src={koala} className="modal-img" />
+              <img src={koala} className="modal-img" alt=""/>
               <p className="modal-text">「{this.state.koalaSaying}」</p>
             </div>
             <button className="modal-share" onClick={() => {
-              window.open(`https://twitter.com/share?url=${urlPage}&text= コアラに「${this.state.helloType}」と挨拶しました！/コアラ「${this.state.koalaSaying}」/hello-koala`, "SNS_window", "width=600, height=500, menubar=no, toolbar=no, scrollbars=yes");
+              window.open(`https://twitter.com/share?url=${urlPage}&text= コアラに「${this.state.helloType}」と挨拶しました！/コアラ「${this.state.koalaSaying}」/Hello! Koala!`, "SNS_window", "width=600, height=500, menubar=no, toolbar=no, scrollbars=yes");
             }}>結果をツイートする</button>
-            <a className="modal-close" onClick={() => {this.setState({isModalOpen: false});}}>×</a>
+            <div className="modal-close" onClick={() => {this.setState({isModalOpen: false});}}>×</div>
           </div>
         </div>
       );
@@ -91,7 +91,7 @@ class App extends React.Component {
       <div className="App">
         <h1>Hello! Koala!</h1>
         <p>我が家のコアラです。<br />コアラに挨拶しよう！</p>
-        <img src={koala} className="app-koala" />
+        <img src={koala} className="app-koala" alt="" />
         <div className="btn-wrap">
           <button 
             onClick={
