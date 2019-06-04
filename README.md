@@ -22,6 +22,8 @@ export PATH="$HOME/.yarn/bin:$PATH"
 
 ### ビルド
 - `yarn build`
+- `yarn global add serve`
+- `serve -s build`
 
 
 ### ファイル構成
