@@ -33,6 +33,10 @@ button:hover {
   flex-wrap: wrap;
   padding: 0;
   justify-content: center;
+  max-width: 700px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 5px;
 }
 .btn-wrap > li {
   list-style: none;
