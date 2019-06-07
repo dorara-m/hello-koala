@@ -68,7 +68,7 @@ button:hover {
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
 }
 .modal-flex {
@@ -108,6 +108,7 @@ button:hover {
   cursor: pointer;
 }
 .modal-share {
+  margin-top: -20px;
   background-color: #1da1f2;
   color: #fff;
   border: none;
